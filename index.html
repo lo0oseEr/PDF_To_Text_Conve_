@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Word Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="converter-box">
+            <h1>PDF to Word Converter</h1>
+            <p class="subtitle">Convert your PDF files to Microsoft Word (.docx) format</p>
+            
+            <div class="upload-area" id="dropZone">
+                <i class="fas fa-file-pdf"></i>
+                <h3>Drag & Drop your PDF here</h3>
+                <p>or</p>
+                <input type="file" id="fileInput" accept=".pdf" hidden>
+                <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                    Choose PDF File
+                </button>
+                <p class="file-name" id="fileName"></p>
+                <p class="file-info">Maximum file size: 10MB</p>
+            </div>
+
+            <div class="convert-actions">
+                <button class="convert-btn" onclick="convertPDF()">
+                    <i class="fas fa-sync-alt"></i> Convert to Word
+                </button>
+                <button class="download-btn" id="downloadBtn" onclick="downloadWord()" disabled>
+                    <i class="fas fa-file-word"></i> Download as Word (.docx)
+                </button>
+            </div>
+
+            <!-- File format info -->
+            <div class="format-info">
+                <div class="format-item">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>PDF</span>
+                </div>
+                <i class="fas fa-arrow-right"></i>
+                <div class="format-item">
+                    <i class="fas fa-file-word"></i>
+                    <span>WORD</span>
+                </div>
+            </div>
+
+            <!-- Preview section -->
+            <div class="preview-section" id="previewSection">
+                <h3>Preview of Word Document Content:</h3>
+                <div class="text-preview" id="textPreview"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
